@@ -50,7 +50,27 @@ Open **MetaAds** *game.ts* file, copy code and paste it to **your** *game.ts*.
 
 > Note: Please, check whether your and our imports of dependencies are not intersected.
 
-## 4. Health check
+## 4. Setup of displays
+
+> Note: [Set up coords](https://docs.decentraland.org/development-guide/scene-metadata/#scene-parcels) of your parcel in file *scene.json* before testing and deploying.
+
+There is a block of code in *game.ts*, which you should to customize for yourself. It consists sizes and positions your displays.
+For start, find in code pointed block, it starts from *Change these parameters* and ends *End block*.
+First parameter *n* is a number of displays that you are putting on the scene.
+The next parameters are arrays:
+
++ *metaAdsScales* contains sizes of displays. Size is three-component variable. First and second numbers are width and height.
+Third number is dummy variable and it always equals 1, because it is a thickness, but display is flat, so you shoudln't change it.
++ *metaAdsPositions* has the same dimension, but its three variables are x, y and z. The position of the display's center on all three axes.
++ *metaAdsImageRotations*. Euler angles, the more common x, y and z notation with numbers that go from 0 to 360.
+The values are set up by default put a screen vertical. If you wish to tilt dislpay forward or backward, change first parameter.
+If you should to rotate on left or right, change second value. And if want tilt to left or right, use third parameter.
+
+> Note: Add to array the same objects that arrays already have, separeted with commas, changing their contains.
+
+> Note: The number of objects in each of arrays should be equal to the number of displays *n*.
+
+## 5. Health check
 
 At the first, run the next command (for locally display of the scene):
 
@@ -64,9 +84,7 @@ A window in a browser with your scene is opened automatically. Also, window with
 
 ![Preview of scene](./images/scene_preview.png)
 
-## 5. Deploying
-
-> Note: Set up coords of your parcel in file *scene.json* before deploying.
+## 6. Deploying
 
 To publish the scene in Decentaland's world, write this command:
 
