@@ -11,27 +11,13 @@ This scene is written with a Decentraland SDK -- a powerful tool, that give abil
 The Command Line Interface (CLI) allows you to compile and preview your scene locally.
 After testing your scene locally, you can use the CLI to upload your content to Decentraland.
 
-### 1.1 Base enviromnent
-
 You should have [Node.js](https://nodejs.org/en/) (version 14 or later) and CLI that is installed globally:
 
 ```console
 npm i -g decentraland
 ```
 
-### 1.2 SDK Libraries
-
-Next libs will be used:
-
-+ *decentraland-ecs-utils* (for sending requests to server with some interval);
-+ *decentraland-ecs* (for identifying of parcel coords, collecting of metrics from scene and sending signed requests).
-
-Run the folowing commands in your CLI:
-
-```console
-npm i decentraland-ecs@latest
-npm i @dcl/ecs-scene-utils -B
-```
+> Note: If you use Macos or Linux, your command should be run with ```sudo```
 
 ## 2. Preparing the scene
 
@@ -45,12 +31,26 @@ Choose from the cases, that possible:
 
 ## 3. Adding MetaAds files
 
-After downloading MetaAds scene's [files](https://metaads.team/app/ad-space), copy all files **except** of *game.ts* in **your** scene directory.
+After downloading MetaAds scene's [files](https://metaads.team/main/publisher/my-adspots), copy all files **except** of *game.ts* in **your** scene directory.
 Open **MetaAds** *game.ts* file, copy code and paste it to **your** *game.ts*.
 
 > Note: Please, check whether your and our imports of dependencies are not intersected.
 
-## 4. Setup of displays
+## 4. SDK Libraries
+
+The next step is a setup of dependencies which we will use:
+
++ *decentraland-ecs-utils* (for sending requests to server with some interval);
++ *decentraland-ecs* (for identifying of parcel coords, collecting of metrics from scene and sending signed requests).
+
+Run the folowing commands in your CLI:
+
+```console
+npm i decentraland-ecs@latest
+npm i @dcl/ecs-scene-utils -B
+```
+
+## 5. Setup of displays
 
 > Note: [Set up coords](https://docs.decentraland.org/development-guide/scene-metadata/#scene-parcels) of your parcel in file *scene.json* before testing and deploying.
 
@@ -70,7 +70,7 @@ If you should to rotate on left or right, change second value. And if want tilt 
 
 > Note: The number of objects in each of arrays should be equal to the number of displays *n*.
 
-## 5. Health check
+## 6. Health check
 
 At the first, run the next command (for locally display of the scene):
 
@@ -80,11 +80,12 @@ dcl start --web3
 
 A window in a browser with your scene is opened automatically. Also, window with confirmation of your wallet is appeared.
 
-> Note: Key *--web3* allows to use a wallet in local preview of scene.
+> Note: Key `--web3` allows to use a wallet in local preview of scene.
+> It is optional, so you can write just ```dcl start```and you will come to a scene like a guest.
 
 ![Preview of scene](./images/scene_preview.png)
 
-## 6. Deploying
+## 7. Deploying
 
 To publish the scene in Decentaland's world, write this command:
 
