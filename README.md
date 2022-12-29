@@ -29,8 +29,8 @@ Choose from the cases. It’s possible if:
 
 ## 3. Adding MetaAds files
 
-After downloading MetaAds scene [files](https://metaads.team/main/publisher/my-adspaces/create), copy all files **except** for *game.ts* in **your** scene directory.
-Open **MetaAds** *game.ts* file, copy the code and paste it to **your** *game.ts*.
+After downloading MetaAds [scene files](https://metaads.team/main/publisher/my-adspots), copy *metaAds* folder in **your** scene directory called **src**.
+Open downloaded from MetaAds *game.ts* file, copy the code and paste it to the end of **your** *game.ts*.
 
 > Note: Please, check whether your and our imports of dependencies are not intersected.
 
@@ -47,6 +47,8 @@ Run the following commands in your CLI:
 npm i decentraland-ecs@latest
 npm i @dcl/ecs-scene-utils -B
 ```
+
+> Note: these commands should be run in scene directory
 
 ## 5. Setup of displays
 
